@@ -1,60 +1,92 @@
 # skills.sh Tracking Plan
 
-Track adoption and discoverability weekly after public release.
+Track adoption and discoverability weekly after public release using a dedicated
+GitHub issue entity, not repository commits or PRs.
 
-## 1) Query-Based Ranking Checks
+## Tracking Entity
 
-Use `skills.sh` search API with fixed queries:
+- Repository: `erikhuizinga/concurrency-lock-vs-lockfree`
+- Issue title: `Tracking dashboard`
+- Issue number source: repository variable `TRACKING_ISSUE_NUMBER`
+
+The automation writes:
+
+1. Weekly raw output to issue comments (one comment per ISO week, updated on rerun).
+2. Aggregated view to the issue body between marker comments:
+   - `<!-- tracking-summary:start -->`
+   - `<!-- tracking-summary:end -->`
+
+## Workflow
+
+- File: `.github/workflows/tracking.yml`
+- Trigger:
+  - Weekly schedule: Monday at `00:00 UTC` (`0 0 * * 1`)
+  - Manual run: `workflow_dispatch`
+- Permissions:
+  - `contents: read`
+  - `issues: write`
+- Script entrypoint: `python scripts/tracking.py`
+
+## Queries
+
+The script tracks the following fixed query set:
 
 - `lock-free`
 - `atomic`
 - `mutex`
 - `concurrency`
+- `synchronization`
 - `ABA`
 - `memory ordering`
 
-Endpoint shape:
+Endpoint:
 
-`https://skills.sh/api/search?q=<query>&limit=10`
+- `https://skills.sh/api/search?q=<query>&limit=10`
 
-Record:
+Matching target:
 
-- date
-- query
-- result rank
-- installs shown
-- exact returned source/skill id
+- Source equals `erikhuizinga/concurrency-lock-vs-lockfree`
 
-## 2) Install Count Trend
+## Weekly Comment Format
 
-Track installs from search/listing responses week-over-week.
+Each weekly comment contains:
 
-Primary signal:
+1. Run metadata (timestamp/status/week key)
+2. Normalized query table
+3. Nested collapsed raw output:
+   - top-level `<details>` for all raw outputs
+   - nested `<details>` per query
+4. Machine-readable payload block:
+   - `<!-- tracking-json:start -->`
+   - `<!-- tracking-json:end -->`
 
-- non-zero installs
-- positive trend over 2-4 weeks
+## Aggregated Issue Body View
 
-## 3) Local Validation Signal
+The issue body summary includes:
 
-Periodically verify discovery and install flow:
+- latest run timestamp/status
+- latest query snapshot (rank/install/found)
+- 4-week trend deltas
+- recent runs table
+- warning section (missing query hits/API partial failures)
 
-1. `npx skills find lock-free`
-2. `npx skills add erikhuizinga/concurrency-lock-vs-lockfree`
+## Security Notes
 
-## 4) Repository Signals
+To reduce PR tampering risk:
 
-Track public repo indicators:
+1. Do not trigger tracking on `pull_request` or `push`.
+2. Use only `schedule` + `workflow_dispatch`.
+3. Keep write scope minimal (`issues: write` only, no contents write).
+4. Protect `.github/workflows/tracking.yml` and `scripts/tracking.py` with
+   CODEOWNERS + required reviews.
 
-- stars
-- forks
-- watchers
-- release engagement on `v0.1.0`
+## Manual Validation
 
-## 5) Optimization Loop
+After configuration:
 
-If discoverability is weak:
-
-1. Tune `SKILL.md` description trigger terms.
-2. Tune `agents/openai.yaml` short description.
-3. Add practical examples to README.
-4. Re-check query rankings after each change set.
+1. Confirm `TRACKING_ISSUE_NUMBER` is set.
+2. Trigger workflow manually once.
+3. Verify:
+   - weekly comment created/updated in issue
+   - summary block updated in issue body
+   - no repository files were changed by the run
