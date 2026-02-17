@@ -19,10 +19,10 @@ npx skills add erikhuizinga/concurrency-lock-vs-lockfree
 
 - `SKILL.md`: skill trigger metadata and playbook
 - `agents/openai.yaml`: UI/invocation metadata
-- `references/principles.md`: distilled design/testing/performance guidance
 - `references/language-mapping.md`: language-specific primitive mapping
-- `references/trigger-tests.md`: trigger precision/recall scenarios
-- `references/tracking.md`: post-release discovery and install tracking
+- `docs/principles.md`: distilled design/testing/performance guidance
+- `docs/trigger-tests.md`: trigger precision/recall scenarios
+- `docs/tracking.md`: post-release discovery and install tracking
 - `CHANGELOG.md`: release notes (including `0.1.0`)
 
 ## Attribution
