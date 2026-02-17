@@ -22,6 +22,8 @@ npx skills add erikhuizinga/concurrency-lock-vs-lockfree
 - `references/principles.md`: distilled design/testing/performance guidance
 - `references/language-mapping.md`: language-specific primitive mapping
 - `references/trigger-tests.md`: trigger precision/recall scenarios
+- `references/tracking.md`: post-release discovery and install tracking
+- `CHANGELOG.md`: release notes (including `0.1.0`)
 
 ## Attribution
 
