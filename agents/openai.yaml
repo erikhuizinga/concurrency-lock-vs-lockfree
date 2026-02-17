@@ -1,0 +1,7 @@
+interface:
+  display_name: "Concurrency: Lock vs Lock-Free"
+  short_description: "Choose safe lock vs lock-free concurrency strategy"
+  default_prompt: "Use $concurrency-lock-vs-lockfree to evaluate this concurrency design and recommend the safest viable approach before lock-free atomics."
+
+policy:
+  allow_implicit_invocation: true
