@@ -1,0 +1,4 @@
+# Require explicit owner review for tracking automation surfaces.
+/.github/workflows/tracking.yml @erikhuizinga
+/scripts/tracking.py @erikhuizinga
+/docs/tracking.md @erikhuizinga
