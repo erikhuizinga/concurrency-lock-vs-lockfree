@@ -12,8 +12,9 @@ npx skills add erikhuizinga/concurrency-lock-vs-lockfree
 ## Use
 
 - Explicit invocation: `$concurrency-lock-vs-lockfree`
-- Typical intent: lock-vs-lock-free design decisions, atomic/CAS correctness and
-  performance tradeoffs, memory-ordering risk assessment.
+- Typical intent: lock-vs-lock-free/lockfree/lockless design decisions,
+  atomic/CAS correctness and performance tradeoffs, memory-ordering risk
+  assessment.
 
 ## Repository Layout
 

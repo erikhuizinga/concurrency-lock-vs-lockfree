@@ -1,6 +1,6 @@
 ---
 name: concurrency-lock-vs-lockfree
-description: Language-agnostic guidance for lock-vs-lock-free concurrency decisions, atomic primitives, and memory-ordering risk evaluation. Use when tasks mention atomics, CAS/compare-and-swap, lock-free queues/stacks/pools, memory ordering or memory fences, ABA, weak-memory behavior, or replacing mutexes/locks for performance. Also use when designing custom synchronization primitives or debugging rare concurrency bugs caused by thread interleavings.
+description: Language-agnostic guidance for lock-vs-lock-free (lockfree/lockless) concurrency decisions, atomic primitives, and memory-ordering risk evaluation. Use when tasks mention atomics, CAS/compare-and-swap, lock-free queues/stacks/pools, memory ordering or memory fences, ABA, weak-memory behavior, or replacing mutexes/locks for performance. Also use when designing custom synchronization primitives or debugging rare concurrency bugs caused by thread interleavings.
 ---
 
 # Concurrency: Lock vs Lock-Free
