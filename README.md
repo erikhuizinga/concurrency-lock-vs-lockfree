@@ -16,6 +16,21 @@ npx skills add erikhuizinga/concurrency-lock-vs-lockfree
   atomic/CAS correctness and performance tradeoffs, memory-ordering risk
   assessment.
 
+## Related Terminology
+
+Search terms commonly associated with this skill:
+
+- lockfree concurrency
+- lock free concurrency
+- lockless synchronization
+- atomic CAS design
+- compare-and-swap correctness
+- mutex versus lock-free
+- memory ordering and fences
+- ABA mitigation
+- linearizability checks
+- hazard pointers and reclamation
+
 ## Repository Layout
 
 - `SKILL.md`: skill trigger metadata and playbook

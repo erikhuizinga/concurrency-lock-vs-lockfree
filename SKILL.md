@@ -10,6 +10,23 @@ is strong evidence they are insufficient.
 
 Use this playbook to make explicit, auditable decisions.
 
+## Related Terminology
+
+The following terms are closely related to this skill's scope and intent:
+
+- lockfree
+- lock free
+- lockless
+- compare-and-swap
+- CAS loop
+- atomic operations
+- mutex vs lock-free
+- synchronization strategy
+- memory ordering
+- ABA problem
+- linearizability
+- hazard pointers
+
 ## Decision Process
 
 1. Identify the shared state and required invariants.

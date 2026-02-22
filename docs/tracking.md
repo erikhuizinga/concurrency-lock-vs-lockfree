@@ -39,6 +39,24 @@ The script tracks the following fixed query set:
 - `ABA`
 - `memory ordering`
 
+## Related Terminology Queries
+
+When validating discoverability manually against `skills.sh/api/search`, also
+track this set:
+
+- `lockfree`
+- `lock free`
+- `lockless`
+- `compare-and-swap`
+- `CAS`
+- `mutex vs lock-free`
+- `memory ordering`
+- `ABA problem`
+- `linearizability`
+- `hazard pointers`
+- `concurrency-lock-vs-lockfree`
+- `erikhuizinga/concurrency-lock-vs-lockfree`
+
 Endpoint:
 
 - `https://skills.sh/api/search?q=<query>&limit=10`

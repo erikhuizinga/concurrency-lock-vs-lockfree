@@ -1,7 +1,9 @@
 interface:
   display_name: "Concurrency: Lock vs Lock-Free"
-  short_description: "Choose safe lock vs lock-free concurrency strategy"
-  default_prompt: "Use $concurrency-lock-vs-lockfree to evaluate this concurrency design and recommend the safest viable approach before lock-free atomics."
+  short_description: "Choose a safe lock/lockfree strategy for atomics, CAS, and memory ordering"
+  # Related terminology: lockfree, lock free, lockless, CAS, compare-and-swap,
+  # mutex vs lock-free, memory ordering, ABA, hazard pointers, linearizability.
+  default_prompt: "Use $concurrency-lock-vs-lockfree to evaluate this concurrency design (lockfree/lockless, CAS, compare-and-swap, mutex vs lock-free) and recommend the safest viable approach before lock-free atomics."
 
 policy:
   allow_implicit_invocation: true
