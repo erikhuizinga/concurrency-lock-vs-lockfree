@@ -21,12 +21,23 @@ from typing import Any
 SKILL_SOURCE = "erikhuizinga/concurrency-lock-vs-lockfree"
 QUERIES = [
     "lock-free",
+    "lockfree",
+    "lock free",
+    "lockless",
     "atomic",
     "mutex",
     "concurrency",
     "synchronization",
     "ABA",
     "memory ordering",
+    "compare-and-swap",
+    "CAS",
+    "mutex vs lock-free",
+    "ABA problem",
+    "linearizability",
+    "hazard pointers",
+    "concurrency-lock-vs-lockfree",
+    "erikhuizinga/concurrency-lock-vs-lockfree",
 ]
 DEFAULT_SEARCH_LIMIT = 10
 RAW_CHARS_LIMIT = 12000
